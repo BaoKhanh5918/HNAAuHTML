@@ -1,0 +1,21 @@
+body{
+    background-color:lightblue;
+}
+
+.red {
+    color: red;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#id-3 {
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+}
+p {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: larger;
+}
+.blue{color: blue;}

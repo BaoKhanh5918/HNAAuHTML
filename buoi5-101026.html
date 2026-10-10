@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> The Coffee House - Trang chủ</title>
+        <style>
+            body{font-family: Arial, sans-serif;
+                  backgroud-color: #f8f1e7;
+                  color: #3e2723;
+                  margin: 0;
+                  padding: 20px;
+                  text-align: center;}
+            h1{color: #6f4e37;}
+            h2{color: #8b4513;
+               margin-top: 30px;}
+            section{background-color: white;
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    border-radius:12px;
+                    box-shadow: 0 2px 8px #cccccc;}
+            video{max-width:100%;
+                  height: auto;
+                  border-radius: 10px;}
+            iframe{border:0;
+                   border-radius: 10px;}
+            .logo{margin: 20px auto;}      
+            footer{margin-top: 30px;
+                   padding:20px;
+                   background-color: #6f4e37;
+                   color:white;}
+        </style>
+    </head>
+    <body>
+        <h1>Chào mừng đến với The Coffee House</h1>
+        <p>Không gian cà phê dành cho những phút giây thư giãn.</p>
+        <section>
+            <h2>Logo quán cà phê bằng SVG</h2>
+            <svg class="logo" width="200" height="100"
+                 xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="200" height="100"
+                rx="20" ry="20" fill="#6f4e37/>" 
+            <text x="100" y="57"
+                  font-size="23"
+                  font-family="Arial"
+                  fill="white"
+                  text-anchor="middle">
+                  THE COFFEE
+                </text>   
+            </svg>
+        <p>Logo được tạo bằng SVG, không cần sử dụng ảnh có sẵn</p>    
+        </section>
+        <section>
+            <h2>Âm thanh nền cho quán cà phê</h2>
+            <p>Thư giãn cùng âm nhạc tại The Coffee House</p>
+            <audio controls loop>
+                <source src="nhac-nen.mp3" type="audio/mpeg">
+            </audio>
+            <p>Nhấn nút phát để nghe nhạc</p>
+        </section>
+        <section>
+            <h2>Video giới thiệu quán cà phê</h2>
+            <p>Khám phá không gian của quán chúng tôi</p>
+            <video width="600" controls poster="anh-dai-dien.jpg">
+                <source src="quan-ca-phe.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ phát video
+            </video>
+        </section>
+        <section>
+            <h2>Video review từ Youtube</h2>
+            <p>Xem video giới thiệu và đánh giá về cà phê</p>
+            <iframe width="600" height="350"
+                src="https://www.youtube.com/embed/VIDEO_ID_HERE?controls=0&loop=1&playlist=VIDEO_ID_HERE"
+                title="Video review quán cà phê"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </section>
+        <section>
+            <h2>Bản đồ vị trí</h2>
+            <p>Địa điểm tham khảo: Landmark 81, TP.HCM</p>
+            <iframe src="https://maps.google.com/maps?q=Landmark%2081%2C%20TP.HCM&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="300"
+            loading="lazy"
+            title="Bản đồ Landmark 81 TP.HCM">
+        </iframe>
+        </section>
+        <footer>
+            <p>Địa chỉ: 123 Đường Cà Phê, Quận 1, TP.HCM</p>
+            <p>&copy; 2026 The Coffee House</p>
+        </footer>
+    </body>
+</html>
