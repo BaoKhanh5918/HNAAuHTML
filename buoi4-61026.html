@@ -1,32 +1,96 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <title>The Coffee House - Trang Chủ</title>
-    </head>
-    <body>
-        <h1>Thực đơn Cà Phê Hôm Nay</h1>
-        <hr>
-        <h2>Hướng Dẫn Đặt Hàng & Dịch Vụ</h2>
-        <h3>3 Bước đặt hàng trực tuyến</h3>
-        <ol>
-            <li>Truy cập website</li>
-            <li>Thêm móm vào giỏ</li>
-            <li>Thanh toán</li>
-        </ol>
-        <h3>Dịch vụ đi kèm</h3>
-        <ul>
-            <li>Wifi miễn phí</li>
-            <li>Không gian làm việc</li>
-            <li>Thanh toán thẻ</li>
-        </ul>
-        <h3>Giải thích thuận ngữ</h3>
-        <dl>
-            <dt><strong>Cold Brew</strong></dt>
-            <dd>Cà phê ủ lạnh</dd>
-            <dt><strong>Espresso</strong></dt>
-            <dd>Cà phê pha máy nguyên chất</dd>
-        </dl>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Coffee House - Trang Chủ</title>
+</head>
+
+<body>
+    <h1>Thực đơn Cà Phê Hôm Nay</h1>
+    <hr>
+    <h2>Hướng Dẫn Đặt Hàng & Dịch Vụ</h2>
+    <h3>3 Bước đặt hàng trực tuyến</h3>
+    <ol>
+        <li>Truy cập website</li>
+        <li>Thêm móm vào giỏ</li>
+        <li>Thanh toán</li>
+    </ol>
+    <h3>Dịch vụ đi kèm</h3>
+    <ul>
+        <li>Wifi miễn phí</li>
+        <li>Không gian làm việc</li>
+        <li>Thanh toán thẻ</li>
+    </ul>
+    <h3>Giải thích thuận ngữ</h3>
+    <dl>
+        <dt><strong>Cold Brew</strong></dt>
+        <dd>Cà phê ủ lạnh</dd>
+        <dt><strong>Espresso</strong></dt>
+        <dd>Cà phê pha máy nguyên chất</dd>
+    </dl>
+    <hr>
+    <h2>Thông tin bản quyền</h2>
+    <p>Bản quyền thuộc về Khanh &copy; 2026</p>
+    <p>Giá gốc:2$ &lt; 50.000 VNĐ &lt; 2&euro;</p>
+    <hr>
+    <h2>Trà trái cây</h2>
+    <table border="1">
+        <tr>
+            <th>Tên món</th>
+            <th>Size M</th>
+            <th>Size L</th>
+        </tr>
+        <tr>
+            <td>Trà Đào Cam Sả</td>
+            <td>40.000</td>
+            <td>50.000</td>
+        </tr>
+        <tr>
+            <td>Trà Vải</td>
+            <td>45.000</td>
+            <td>55.000</td>
+        </tr>
+        <tr>
+            <td colspan="3">Miễn phí Upsize thứ 3 hàng tuần</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Đặt bàn trực tuyến</h2>
+    <form action="process.html" method="POST">
+        <p>
+            <label for="hoten">Họ và tên người đặt:</label>
+            <input type="text" id="hoten" name="hoten">
+        </p>
+        <p>
+            <label for="sđt">Số điện thoại:</label>
+            <input type="tel" id="sđt" name="sđt" maxlength="10">
+        </p>
+        <p>
+            <label for="ngay">Ngày đặc bàn:</label>
+            <input type="date" id="ngay" name="ngay">
+        </p>
+        <p>
+            <label for="gio">Giờ đến:</label>
+            <input type="time" id="gio" name="gio">
+        </p>
+        <p>
+            <label for="soluong">Số lượng khách:</label>
+            <input type="number" id="soluong" name="soluong" min="1" max="20">
+        </p>
+        <p>
+            <input type="checkbox" id="vip" name="vip" disabled>
+            <label for="vip">Tôi muốn đặt phòng VIP</label>
+            (Phòng VIP đang được bảo trì)
+        </p>
+        <p>
+            <input type="submit" value="Xác nhận đặt bàn">
+        </p>    
+    </form>
+    <hr>
+    <footer>
+        <p>Địa chỉ: 123 Đường Cà Phê, Quận 1, TP.HCM</p>
+        <p>Bản quyền thuộc về Khanh &copy; 2026</p>
+    </footer>
+</body>
 </html>
