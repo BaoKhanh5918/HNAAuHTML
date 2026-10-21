@@ -323,6 +323,16 @@ ul {
     border-color: var(--green);
 }
 
+.partner {
+    padding: 8px;
+}
+
+.partner img {
+    width: 100%;
+    max-width: 115px;
+    height: auto;
+}
+
 .p-vib {
     color: #0057b8;
 }
