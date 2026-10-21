@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kafi Trade | Kafi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kafi.css">
+</head>
+
+<body id="top">
+
+  <header class="header">
+    <div class="container">
+      <a href="kafiabout.html" class="logo"><img src="images/logo.svg" alt="Kafi"></a>
+      <nav class="nav" id="nav">
+        <a href="kafiabout.html">Thông tin chung</a>
+        <a href="kafitrade.html" class="active">Kafi Trade</a>
+        <a href="#">Mở tài khoản</a>
+        <a href="#">Đăng nhập</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+  <section class="hero hero-trade">
+    <div class="container">
+      <div>
+        <h1>Giao dịch chứng khoán<br>Kafi Trade</h1>
+        <a href="#" class="btn">Giao dịch ngay</a>
+      </div>
+      <img class="hero-img" src="images/phone.svg" alt="Ứng dụng Kafi Trade trên điện thoại">
+    </div>
+  </section>
+  <div class="tabs">
+    <div class="container">
+      <ul>
+        <li><a href="#" class="active">Nền tảng giao dịch</a></li>
+        <li><a href="#">Biểu phí giao dịch</a></li>
+        <li><a href="#">Tài trợ giao dịch</a></li>
+        <li><a href="#">Chứng quyền có bảo đảm</a></li>
+      </ul>
+    </div>
+  </div>
+  <main class="trade-body">
+    <div class="container">
+      <div class="card">
+        <section class="feature">
+          <div class="visual"><img src="images/phone.svg" alt="Bảng giá trên ứng dụng"></div>
+          <div>
+            <h2>Ứng dụng giao dịch mọi lúc, mọi nơi.</h2>
+            <p>Giao diện trực quan, dễ sử dụng, hệ thống thông tin thị trường, thông tin đầu tư... được phân tầng rõ
+              ràng giúp nhà đầu tư nhanh chóng nhận diện những cơ hội tiềm năng và hạn chế những rủi ro đầu tư.</p>
+            <div class="qr-box">Quét mã tải app<img src="images/qr.svg" alt="QR tải ứng dụng"></div>
+          </div>
+        </section>
+        <section class="feature reverse">
+          <div>
+            <h2>Nền tảng giao dịch dễ dàng, chuyên nghiệp.</h2>
+            <p>Trợ thủ đắc lực cho những nhà đầu tư chứng khoán với những tính năng vượt trội dựa trên tảng công nghệ
+              tiên tiến cùng sự thấu hiểu tâm lý khách hàng.</p>
+            <a href="#" class="btn">Giao dịch ngay</a>
+          </div>
+          <div class="visual"><img src="images/laptop.svg" alt="Nền tảng giao dịch trên máy tính"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <a href="about.html" class="logo"><img src="images/logo.svg" alt="Kafi"></a>
+        <div class="info">
+          <span>📍 Tầng 14, Tòa nhà Sailing Tower, 111A Pasteur, Phường Sài Gòn, TP. HCM</span>
+          <span>✉ contact@kafi.vn &nbsp;&nbsp; ☎ Hotline 1900.633.322</span>
+          <div class="socials"><a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">▶</a></div>
+        </div>
+      </div>
+      <div>
+        <h4>Về chúng tôi</h4>
+        <ul>
+          <li><a href="about.html">Thông tin chung</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Quan hệ cổ đông</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sản phẩm</h4>
+        <ul>
+          <li><a href="kafi-trade.html">Kafi Trade</a></li>
+          <li><a href="#">Partner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="#">Liên hệ</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+          <li><a href="#">Tin tức</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© Bản quyền 2022 thuộc về Công ty Cổ phần Chứng Khoán Kafi</div>
+  </footer>
+  <a href="#top" class="to-top" aria-label="Lên đầu trang">&#8963;</a>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function () {
+      document.getElementById('nav').classList.toggle('open');
+    });
+  </script>
+</body>
+
+</html>
