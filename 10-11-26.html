@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafi - Bài tập JavaScript</title>
+</head>
+
+<body>
+    <h1>Hệ thống đầu tư Kafi</h1>
+    <p id="greeting-box"></p>
+    <p id="investment-total"></p>
+    <p id="net-profit"></p>
+    <script>
+        window.alert("Chào mừng bạn đến với hệ thống đầu tư Kafi!");
+        let stockPrice = 25000;
+        let quantity = 100;
+        let total = stockPrice * quantity;
+        console.log("Bài 2 - Tổng giá trị đầu tư:", total);
+        let customerName = "Nguyen Van Hung";
+        document.getElementById("greeting-box").innerHTML =
+            "Xin chào, <b>" + customerName + "</b>! Bạn đang đăng nhập hệ thống Kafi.";
+        let capital = 100000000;
+        let rate = 0.08;
+        let feeRate = 0.002;
+        let interest = capital * rate;
+        let fee = capital * feeRate;
+        let profit = interest - fee;
+        console.log("Bài 5 - Lợi nhuận ròng:", profit);
+        console.log(customerName);
+        document.getElementById("investment-total").textContent =
+            "Tổng giá trị đầu tư: " + total.toLocaleString("vi-VN") + " đồng";
+        document.getElementById("net-profit").textContent =
+            "Lợi nhuận ròng: " + profit.toLocaleString("vi-VN") + " đồng";
+    </script>
+</body>
+
+</html>
