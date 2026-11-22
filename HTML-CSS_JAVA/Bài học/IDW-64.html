@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Đối tượng JavaScript</title>
+</head>
+
+<body>
+    <h1>Trang about Kafi</h1>
+    <h2>Lãi dự kiến sau 1 năm</h2>
+    <p id="return-result"></p>
+    <script>
+        console.log("===== Bài 1 =====");
+        const kafiCompany = {
+            name: "Cong ty cổ phần Chứng khoán Kafi",
+            establishedYear: 2006,
+            headquarters: "Thành phố Hồ Chí Minh",
+            coreProducts: ["K-Stock", "K-Margin", "K-Wealth"]
+        };
+        console.log(kafiCompany.name);
+        console.log(kafiCompany["headquarters"]);
+        kafiCompany.website = "https://kafi.vn";
+        kafiCompany.establishedYear = 2007;
+        console.log(kafiCompany);
+        console.log("===== Bài 2 =====");
+        const kafiCustomer = {
+            name: "Nguyễn Huyền Bảo Khanh",
+            investedAmount: 100000000,
+            rate: 0.08,
+            calculateExpectedReturn() {
+                return this.investedAmount * this.rate;
+            }
+        };
+        const expectedReturn = kafiCustomer.calculateExpectedReturn();
+        document.getElementById("return-result").textContent = expectedReturn.toLocaleString("vi-VN") + " VNĐ";
+        console.log("Lãi dự kiến:", expectedReturn);
+        console.log("===== Bài 3 =====");
+        function KafiService(serviceName, minCapital, riskLevel) {
+            this.serviceName = serviceName;
+            this.minCapital = minCapital;
+            this.riskLevel = riskLevel;
+            this.displayInfo = function () {
+                console.log(
+                    `Dịch vụ: ${this.serviceName} | Vốn tối thiểu: ${this.minCapital.toLocaleString("vi-VN")} VNĐ | Mức rủi ro: ${this.riskLevel}`
+                );
+            };
+        }
+        const kStock = new KafiService("K-Stock", 1000000, "Trung bình");
+        const kMargin = new KafiService("K-Margin", 10000000, "Cao");
+        const kWealth = new KafiService("K-Wealth", 50000000, "Thấp");
+        kStock.displayInfo();
+        kMargin.displayInfo();
+        kWealth.displayInfo();
+        console.log("===== BÀI 4 =====");
+        for (const key in kafiCompany) {
+            console.log(key + ": " + kafiCompany[key]);
+        }
+        if ("taxCode" in kafiCompany) {
+            console.log("taxCode tồn tại (dùng in)");
+        } else {
+            console.log("taxCode KHÔNG tồn tại (dùng in)");
+        }
+        if (kafiCompany.hasOwnProperty("taxCode")) {
+            console.log("taxCode tồn tại (dùng hasOwnProperty)");
+        } else {
+            console.log("taxCode KHÔNG tồn tại (dùng hasOwnProperty)");
+        }
+        console.log("===== BÀI 5 =====");
+        const advisor = new Object();
+        advisor.fullName = "Trần Thị B";
+        advisor.experienceYears = 8;
+        advisor.specialty = "Tư vấn đầu tư cổ phiếu";
+        advisor.introduce = function () {
+            return `Xin chào, tôi là ${this.fullName}, chuyên viên tư vấn với ${this.experienceYears} năm kinh nghiệm về ${this.specialty}.`;
+        };
+        window.alert(advisor.introduce());
+    </script>
+</body>
+
+</html>

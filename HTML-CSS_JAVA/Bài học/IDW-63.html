@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm trong JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111827;
+            color: #e5e7eb;
+            margin: 0;
+            padding: 32px;
+            line-height: 1.7;
+        }
+
+        .wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1f2937;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #f9fafb;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        .item {
+            padding: 10px 14px;
+            background: #374151;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Hệ thống Kafi - Hàm trong JavaScript</h1>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function logToPage(message) {
+            const item = document.createElement("div");
+            item.className = "item";
+            item.textContent = message;
+            output.appendChild(item);
+        }
+
+        // 1. Function Declaration & Hoisting
+        function sayWelcome() {
+            logToPage("Chào mừng bạn đến với hệ thống Kafi!");
+        }
+        sayWelcome();
+
+        // 2. Function Expression
+        const calculateTax = function (income) {
+            return income * 0.1;
+        };
+        logToPage("Tiền thuế: " + calculateTax(20000000).toLocaleString("vi-VN") + " VNĐ");
+
+        // 3. Arrow Function
+        const formatMoney = (amount) => amount.toLocaleString("vi-VN") + " VNĐ";
+        logToPage("Định dạng tiền: " + formatMoney(15000000));
+
+        // 4. Callback Function
+        function processOrder(orderID, callbackFunction) {
+            logToPage("Đang xử lý đơn hàng mã số: " + orderID);
+            callbackFunction();
+        }
+        processOrder("KAFI-9988", function () {
+            logToPage("Thành công! Đã gửi thông báo xác nhận qua Email.");
+        });
+
+        // 5. Local variables
+        function registerAccount() {
+            let secretToken = "AUTH_TOKEN_777";
+            logToPage("Khởi tạo token thành công bên trong hàm.");
+            return secretToken;
+        }
+        registerAccount();
+
+        try {
+            console.log(secretToken);
+        } catch (error) {
+            logToPage("Lỗi: Không thể truy cập biến nội bộ từ bên ngoài hàm!");
+        }
+    </script>
+</body>
+</html>

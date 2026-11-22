@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafi - Bài tập Biến trong JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 16px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #6b3f1d;
+        }
+
+        h2 {
+            color: #6b3f1d;
+            margin-top: 28px;
+            font-size: 18px;
+        }
+
+        p#demo {
+            background: #f4e9dd;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        pre#output {
+            background: #1e1e1e;
+            color: #e6e6e6;
+            padding: 12px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kafi - Bài tập thực hành Biến</h1>
+    <h2>Kết quả Console (Bài 1, 2, 5)</h2>
+    <pre id="output"></pre>
+    <h2>Bài 3: Tính toán tài chính (hiển thị bằng innerHTML)</h2>
+    <p id="demo"></p>
+    <script>
+        function show() {
+            var text = Array.prototype.slice.call(arguments).join(" ");
+            document.getElementById("output").textContent += text + "\n";
+            console.log.apply(console, arguments);
+        }
+        const COMPANY_NAME = "Kafi";
+        const FOUNDED_YEAR = 2020;
+        let visitCount = 1000;
+        let isLoggedIn = false;
+        show("--- Bài 1 ---");
+        show("Tên công ty:", COMPANY_NAME);
+        show("Năm thành lập:", FOUNDED_YEAR);
+        show("Lượt truy cập:", visitCount);
+        show("Đã đăng nhập:", isLoggedIn);
+        show("");
+        show("--- Bài 2 ---");
+        const tests = [
+            'let 2ndUser = "Test";',
+            'let let = 5;',
+            'let customer_name = "Nguyen Van Hung";',
+            'let $price = 500;'
+        ];
+        tests.forEach(function (code) {
+            try {
+                new Function(code);
+                show(" Hợp lệ:", code);
+            } catch (e) {
+                show(" Lỗi:", code, e.message);
+            }
+        });
+        let principal = 50000000;
+        let interestRate = 0.07;
+        let interest = principal * interestRate;
+        let total = principal + interest;
+        document.getElementById("demo").innerHTML =
+            "Tiền gốc: " + principal.toLocaleString("vi-VN") + " đ<br>" +
+            "Tiền lãi sau 1 năm: " + interest.toLocaleString("vi-VN") + " đ<br>" +
+            "Tổng gốc + lãi: " + total.toLocaleString("vi-VN") + " đ";
+        show("");
+        show("--- Bài 5 ---");
+        let num = 1000;
+        let str = "Kafi";
+        let bool = true;
+        let undef;
+        let obj = { name: "Kafi", year: 2020 };
+        let arr = [1, 2, 3];
+        show("Number   :", typeof num);
+        show("String   :", typeof str);
+        show("Boolean  :", typeof bool);
+        show("Undefined:", typeof undef);
+        show("Object   :", typeof obj);
+        show("Array    :", typeof arr, "(Array cũng là object; Array.isArray(arr) =", Array.isArray(arr) + ")");
+        let firstName = "Van Hung";
+        let lastName = "Nguyen";
+        let fullName = lastName + " " + firstName;
+        window.alert("Xin chào " + fullName + ", chào mừng bạn đến với Kafi!");
+    </script>
+</body>
+
+</html>

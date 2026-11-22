@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm và đối tượng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0e16;
+            color: #e5e7eb;
+            margin: 0;
+            padding: 32px;
+            line-height: 1.7;
+        }
+
+        .wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #000000;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #f9fafb;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        .item {
+            padding: 10px 14px;
+            background: #717e9280;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Hàm và đối tượng</h1>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+
+        function logToPage(message) {
+            const item = document.createElement('div');
+            item.className = 'item';
+            item.textContent = message;
+            output.appendChild(item);
+        }
+
+        function calculateInvestmentProfit(principal, rate, years) {
+            let total = principal * Math.pow((1 + rate), years);
+            let profit = total - principal;
+            return profit;
+        }
+        let myProfit = calculateInvestmentProfit(10000000, 0.08, 2);
+        logToPage('Lợi nhuận dự kiến sau 2 năm: ' + myProfit.toLocaleString('vi-VN') + ' VNĐ');
+
+        const checkVipStatus = function (totalSpent) {
+            let threshold = 50000000;
+            if (totalSpent >= threshold) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        let customerCheck = checkVipStatus(65000000);
+        logToPage('Khách hàng đạt chuẩn VIP? ' + customerCheck);
+
+        const formatCurrency = (amount) => amount.toLocaleString('vi-VN') + ' VNĐ';
+        let stockPrice = 35500;
+        logToPage('Giá cổ phiếu hiện tại: ' + formatCurrency(stockPrice));
+
+        function processTransaction(amount, callbackFn) {
+            logToPage('Đang xử lý giao dịch số tiền: ' + amount.toLocaleString('vi-VN') + ' VNĐ...');
+            callbackFn();
+        }
+        processTransaction(2500000, function () {
+            logToPage('Thành công! Hệ thống đã gửi biên lai về email của bạn.');
+        });
+
+        function registerAccount() {
+            let secretToken = 'KAFI_SECURE_999';
+            logToPage('Mã bảo mật khởi tạo thành công bên trong hàm.');
+            return secretToken;
+        }
+        registerAccount();
+
+        try {
+            console.log(secretToken);
+        } catch (error) {
+            logToPage('Lỗi bắt được: Không thể truy cập biến nội bộ từ bên ngoài hàm!');
+        }
+    </script>
+</body>
+</html>

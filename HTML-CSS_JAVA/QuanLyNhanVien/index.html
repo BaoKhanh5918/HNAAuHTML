@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="" width=device-width, initial-scale="1.0">
+    <title> Quản lý nhân viên</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <label for="searchId">Nhập Mã Nhân Viên</label>
+            <input type="text" id="searchId">
+            <button class="btn" id="btnSearch">Tìm kiếm</button>
+            <button class="btn" id="btnAdd">Thêm mới nhân viên</button>
+            <button class="btn" id="btnUpdate">Sửa thông tin</button>
+        </div>
+        <div class="form-grid">
+            <div class="form-row">
+                <label for="empId">Mã nhân viên</label>
+                <input type="text" id="empId" disabled>
+            </div>
+            <div class="form-row">
+                <label for="empName">Họ &amp; tên</label>
+                <input type="text" id="empName">
+            </div>
+            <div class="form-row">
+                <label for="empPhone">Số điện thoại</label>
+                <input typr="text" id="empPhone">
+            </div>
+            <div class="form-row">
+                <label for="empAccount">Tài khoản</label>
+                <input type="text" id="empAccount">
+            </div>
+            <div class="form-row">
+                <label for="empEmail">Email</label>
+                <input type="text" id="empEmail">
+            </div>
+            <div class="form-row">
+                <label for="empYear">Năm sinh</label>
+                <input type="text" id="empYear">
+            </div>
+        </div>
+        <p class="list-title">Hiển Thị Danh Sách Nhân Viên</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã Nhân Viên</th>
+                        <th>Họ &amp; tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Tài khoản</th>
+                        <th>Email</th>
+                        <th>Năm sinh</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
