@@ -1,0 +1,14 @@
+C:\HTML\demohtml\bin\Debug\net10.0\demohtml.exe
+C:\HTML\demohtml\bin\Debug\net10.0\demohtml.deps.json
+C:\HTML\demohtml\bin\Debug\net10.0\demohtml.runtimeconfig.json
+C:\HTML\demohtml\bin\Debug\net10.0\demohtml.dll
+C:\HTML\demohtml\bin\Debug\net10.0\demohtml.pdb
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.GeneratedMSBuildEditorConfig.editorconfig
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.AssemblyInfoInputs.cache
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.AssemblyInfo.cs
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.csproj.CoreCompileInputs.cache
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.dll
+C:\HTML\demohtml\obj\Debug\net10.0\refint\demohtml.dll
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.pdb
+C:\HTML\demohtml\obj\Debug\net10.0\demohtml.genruntimeconfig.cache
+C:\HTML\demohtml\obj\Debug\net10.0\ref\demohtml.dll

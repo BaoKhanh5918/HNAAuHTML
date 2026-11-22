@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập JavaScript - Kafi</title>
+</head>
+
+<body>
+    <h1> Ôn tập </h1>
+    <h2>Giá trị tài sản và hạn mức đầu tư</h2>
+    <p>Giá trị tài sản: <span id="asset"></span></p>
+    <p>Hạn mức đầu tư: <span id="limit"></span></p>
+    <script>
+        function calculateTotalValue(price, quantity) {
+            return price * quantity;
+        }
+        console.log("Bài 1:", calculateTotalValue(25000, 100));
+        console.log("Bài 1:", calculateTotalValue(48500, 250));
+        showKafiIntro();
+        function showKafiIntro() {
+            console.log("Bài 2: Xin chào, đây là Kafi!");
+        }
+        const calcTransactionFee = function (amount, feeRate) {
+            return amount * feeRate;
+        };
+        console.log("Bài 3: Phí giao dịch =", calcTransactionFee(10000000, 0.001));
+        const formatVND = (number) => number.toLocalString("vi-VN") + "VNĐ";
+        document.getElementById("asset").textContent = formatVND(1250000);
+        document.getElementById("limit").textContent = formatVND(500000000);
+        console.log("Bài 4:", formatVND(1250000));
+        function executeKafiAction(actionName, callback) {
+            console.log("Bài 5: Kafi đang thực hiện: " + actionName);
+            callback();
+        }
+        executeKaffiAction("Mở tài khoản", function () {
+            console.log("Bài 5: Đã xong!");
+        });
+        const kafiProfile = {
+            brandName: "Kafi",
+            foundedYear: 2020,
+            hqCity: "Thành phố Hồ Chí Minh",
+            services: ["Môi giới chứng khoán", "Quỹ mở", "Tư vấn đầu tư"],
+        };
+        console.log("Bài 6:", kafiProfile.brandName);
+        console.log("Bài 6:", kafiProfile["hqCity"]);
+        console.log("Bài 6:", kafiProfile["hqCity"]); kafiProfile.slogan = "Đầu tư thông minh";
+        kafiProfile.test = "abc";
+        delete kafiProfile.test;
+        console.log("Bài 6:", kafiProfile);
+        const kafiFund = { name: "K-Cash", balance: 100000000, rate: 0.05 };
+        kafiFund.getAnnualYield = function () {
+            return this.balance * this.rate;
+        };
+        console.log("Bài 7: Lãi 1 năm =", kafiFund.getAnnualYield());
+        const supportDesk = new Object();
+        supportDesk.hotline = "1900 xxxx";
+        supportDesk.email = "support@example.com";
+        supportDesk.workingHours = "08:00 - 17:30";
+        supportDesk.contactInfo = function () {
+            console.log("Bài 8: Hotline: " + this.hotline);
+            console.log("Bài 8: Email: " + this.email);
+            console.log("Bài 8: Giờ làm việc: " + this.workingHours);
+        };
+        supportDesk.contactInfo();
+        function kafiPackage(code, title, minInvest) {
+            this.code = code;
+            this.title = title;
+            this.minInvest = minInvest;
+            this.describe = function () {
+                console.log("Bài 9:" + this.code + " - " + this.title + " - Tối thiểu: " + this, minInvest);
+            };
+        }
+        const pkg1 = new KafiPackage("KC01", "Gói K-Cash", 10000);
+        const pkg2 = new KafiPackage("KG02", "Gói Tăng Trưởng", 1000000);
+        const pkg = new KafiPackage("KP03", "Gói Premium", 5000000000);
+        pkg1.describe();
+        pkg2.describe();
+        pkg3.describe();
+        for (const key in kafiProfile) {
+            console.log("Bài 10: ", + key + " - " + kafiProfile[key]);
+        }
+        console.log("Bài 10: 'hotline' in kafiProfile = ", "hotline" in kafiProfile);
+        console.log("Bài 10: hasOwnProperty =", kafiProfile, hasOwnProperty("hotline"));
+    </script>
+</body>
+
+</html>
