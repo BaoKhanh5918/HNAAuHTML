@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Chuỗi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 24px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .row input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 9px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 6px;
+            margin-top: 6px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .output {
+            margin-top: 12px;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            min-height: 44px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bài Tập Thực Hành Chuỗi (String)</h1>
+        <div class="card">
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" placeholder="Ví dụ:  0912345678  " onblur="xuLyBai1()" />
+            </div>
+            <div class="form-group">
+                <label for="fullName">Họ &amp; tên</label>
+                <input type="text" id="fullName" placeholder="Ví dụ: Nguyễn Văn A" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Ví dụ: van.a@gmail.com" onblur="xuLyBai3()" />
+            </div>
+            <div class="form-group">
+                <label for="account">Tài khoản (để trống sẽ tự gợi ý từ Email)</label>
+                <input type="text" id="account" placeholder="Tài khoản..." />
+            </div>
+            <div class="form-group">
+                <label for="birthYear">Năm sinh</label>
+                <input type="text" id="birthYear" placeholder="Ví dụ: 1998" />
+            </div>
+        </div>
+        <div class="card">
+            <p>Danh sách mẫu: <strong>NV001</strong> (Trần Minh Anh), <strong>NV002</strong> (Lê Hoàng Nam),
+                <strong>NV010</strong> (Phạm Thu Hà)
+            </p>
+            <div class="row">
+                <input type="text" id="searchMaNV" placeholder="Nhập mã cần tìm (ví dụ:  nv001  )" />
+                <button type="button" onclick="timKiemNhanVien()">Tìm kiếm</button>
+                <button type="button" onclick="kiemTraTrungMa()">Kiểm tra trùng mã</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="form-group">
+                <label for="moTaNV">Chuỗi mô tả nhân viên</label>
+                <input type="text" id="moTaNV" value="Nhân viên: Nguyễn Văn Thạo - Mã: NV123" />
+            </div>
+            <div class="form-group">
+                <label for="emailDoiMien">Email cần đổi tên miền (@gmail.com -&gt; @company.vn)</label>
+                <input type="text" id="emailDoiMien" value="thao.nguyen@gmail.com" />
+            </div>
+            <button type="button" onclick="xuLyBai5()">Trích xuất &amp; Thay thế</button>
+        </div>
+    </div>
+    <script>
+        function xuLyBai1() {
+            const phone = document.getElementById("phone").value.trim();
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const account = document.getElementById("account").value.trim();
+            const birthYear = document.getElementById("birthYear").value.trim();
+            const messages = [];
+            const emptyFields = [];
+            if (phone.length === 0) emptyFields.push("Số điện thoại");
+            if (fullName.length === 0) emptyFields.push("Họ & tên");
+            if (email.length === 0) emptyFields.push("Email");
+            if (account.length === 0) emptyFields.push("Tài khoản");
+            if (birthYear.lenght === 0) emptyFields.push("Năm sinh");
+            if (emptyFields.length > 0) {
+                messages.push("Các trường đang bị rỗng: " + emptyFields.join(", "));
+            } else {
+                messages.push("Tất cả các trường đều đã có dữ liệu (sau khi .trim()).");
+            }
+
+            if (phone.length < 10) {
+                messages.push(`Số điện thoại hiện có ${phone.length} ký tự (nhỏ hơn 10 ký tự).`);
+            } else {
+                messages.push(`Số điện thoại hợp lệ về độ dài (${phone.length} ký tự).`);
+            }
+
+            console.log(messages.join("\n"));
+        }
+        const danhSachNhanVien = [
+            { maNV: "NV001", ten: "Trần Minh Anh" },
+            { maNV: "NV002", ten: "Lê Hoàng Nam" },
+            { maNV: "NV003", ten: "Phạm Thu Hà" },
+        ];
+        function timKiemNhanVien() {
+            const tuKhoa = document.getElementById("searchMaNV").value.trim().toUpperCase();
+            const ketQua = danhSachNhanVien.filter((nv) => nv.maNV.trim().toUpperCase().includes(tuKhoa));
+            let text = `Từ khóa chuẩn hóa: "${tuKhoa}"\n`;
+            if (ketQua.length === 0) { text += "Không tìm thấy nhân viên phù hợp!"; }
+            else { text += "Nhân viên tìm thấy:\n" + ketQua.map((nv) => `- ${nv.maNV}: ${nv.ten}`).join("\n"); }
+            console.log(text);
+            document.getElementById("outputBai2").textContent = text;
+        }
+        function xuLyBai3() {
+            const email = document.getElementById("email").value.trim();
+            const accountEl = document.getElementById("account");
+            if (!email.includes("@") || email.indexOF("@") <= 0) {
+                console.log("Email không hợp lệ: cần chứa '@' và có phần tên đứng trước '@'. ")
+                return;
+            }
+            const parts = email.split("@");
+            if (parts.length !== 2) {
+                console.log("Email không hợp lệ: chỉ nên có duy nhất một ký tự '@'.");
+                return;
+            }
+            const tenTaiKhoan = parts[0];
+            const tenMien = parts[1];
+            const domainHopLe =
+                tenMien.length >= 3 &&
+                tenMien.includes(".") &&
+                !tenMien.startsWith(".") &&
+                !tenMien.endsWith(".");
+            if (!domainHopLe) {
+                console.log(`Email không hợp lệ: tên miền "${tenMien}" sau '@' chưa hợp lệ.`);
+                return;
+            }
+            if (accountEl.value.trim().length === 0) {
+                accountEl.value = tenTaiKhoan;
+                console.log(`Email hợp lệ! Đã tự động điền Tài khoản: "${tenTaiKhoan}"`);
+            } else {
+                console.log(`Email hợp lệ! Tên miền: "${tenMien}"`);
+            }
+        }
+        function layThongTinHienTai() {
+            const maNV = document.getElementById("searchMaNV").value.trim().toUpperCase() || "NV005";
+            const hoTen = document.getElementById("fullName").value.trim() || "Đỗ Gia Bảo";
+            const email = document.getElementById("email").value.trim() || "bao.do@company.vn";
+            return { maNV, hoTen, email };
+        }
+        function taoThongBaoEscape() {
+            const { maNV, hoTen, email } = layThongTinHienTai();
+            const thongBao =
+                "\"Thông báo hệ thống\"\n" +
+                "\t- Mã NV: '" + maNV + "'\n" +
+                "\t- Họ & tên: '" + hoTen + "'\n" +
+                "\t- Email: '" + email + "'";
+            console.log(thongBao);
+            document.getElementById("outputBai4").textContent = thongBao;
+        }
+        function taoThongBaoTemplate() {
+            const { maNV, hoTen, email } = layThongTinHienTai();
+            const thongBao = `Thông tin nhân viên (Template Literal):
+\tMã NV: "${maNV}"
+\tHọ & tên: '${hoTen}'
+\tEmail: "${email}"`;
+            console.log(thongBao);
+            document.getElementById("outputBai4").textContent = thongBao;
+        }
+        function xuLyBai5() {
+            const moTa = document.getElementById("moTaNV").value;
+            const emailCu = document.getElementById("emailDoiMien").value.trim();
+            const key = "Mã: ";
+            const viTri = moTa.indexOf(key);
+            let maTrichXuat = "Không tìm thấy";
+            if (viTri !== -1) {
+                const batDau = viTri + key.length;
+                maTrichXuat = moTa.slice(batDau).trim();
+            }
+            const emailMoi = emailCu.replace("@gmail.com", "@company.vn");
+            const kq =
+                `Mã nhân viên trích xuất: "${maTrichXuat}"\n` +
+                `Email sau khi thay thế: "${emailMoi}"`;
+            console.log(kq);
+            document.getElementById("outputBai5").textContent = kq;
+        }
+        taoThongBaoEscape();
+        taoThongBaoTemplate();
+    </script>
+</body>
+
+</html>
